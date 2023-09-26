@@ -25,8 +25,6 @@ const Global = createGlobalStyle`
     max-width: 1024px;
     width: 100%;
     margin: 0 auto;
-    padding-top: 80px;
-    padding-bottom: 120px;
   }
 
   h1 {
@@ -47,6 +45,10 @@ const Global = createGlobalStyle`
   h4 {
     font-size: 16px;
     font-weight: 900;
+  }
+
+  a {
+    text-decoration: none;
   }
 `
 
