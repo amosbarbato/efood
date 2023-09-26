@@ -1,18 +1,19 @@
+import { useParams } from 'react-router-dom'
 import * as S from './styles'
+import { RestaurantParams } from '../../pages/menu'
+import { useGetRestaurantQuery } from '../../services/api'
 
-type Props = {
-  image: string
-  type: string
-  title: string
+const Hero = () => {
+  const { id } = useParams() as RestaurantParams
+  const { data } = useGetRestaurantQuery(id)
+
+  return (
+    <S.Image style={{ backgroundImage: `url(${data?.capa})` }}>
+      <S.Titles className="container">
+        <span>{data?.tipo}</span>
+        <h2>{data?.titulo}</h2>
+      </S.Titles>
+    </S.Image>
+  )
 }
-
-const Hero = ({ image, type, title }: Props) => (
-  <S.Image style={{ backgroundImage: `url(${image})` }}>
-    <S.Titles className="container">
-      <span>{type}</span>
-      <h2>{title}</h2>
-    </S.Titles>
-  </S.Image>
-)
-
 export default Hero

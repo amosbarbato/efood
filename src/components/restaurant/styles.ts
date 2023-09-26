@@ -3,8 +3,6 @@ import { color } from '../../styles'
 import { ButtonContainer } from '../button/styles'
 
 export const Card = styled.div`
-  width: 472px;
-  height: 398px;
   background-color: ${color.white};
   border: 1px solid ${color.red};
   position: relative;
@@ -31,6 +29,7 @@ export const Card = styled.div`
 
   ${ButtonContainer} {
     margin-left: 8px;
+    margin-bottom: 8px;
   }
 `
 

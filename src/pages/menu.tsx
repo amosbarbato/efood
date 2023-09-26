@@ -18,11 +18,7 @@ const Menu = () => {
       <Header />
       {foodId && (
         <>
-          <Hero
-            image={foodId?.capa}
-            type={foodId?.tipo}
-            title={foodId?.titulo}
-          />
+          <Hero />
           <ProductList />
         </>
       )}
