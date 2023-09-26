@@ -20,7 +20,8 @@ export const HeaderContent = styled.header`
     margin: 64px 0;
   }
 
-  a {
+  span {
+    cursor: pointer;
     font-size: 18px;
     font-weight: 900;
     color: ${color.red};

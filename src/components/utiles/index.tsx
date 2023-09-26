@@ -11,3 +11,12 @@ export const parseToBrl = (preco = 0) => {
     currency: 'BRL'
   }).format(preco)
 }
+
+export const getTotalPrice = (items: Cardapio[]) => {
+  return items.reduce((acc, currentValue) => {
+    if (currentValue.preco) {
+      return (acc += currentValue.preco)
+    }
+    return 0
+  }, 0)
+}

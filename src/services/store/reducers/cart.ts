@@ -1,7 +1,7 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit'
 
 type CartState = {
-  items: ModalState[]
+  items: Cardapio[]
   enable: boolean
 }
 
@@ -14,7 +14,7 @@ const cartSlice = createSlice({
   name: 'cart',
   initialState,
   reducers: {
-    add: (state, action: PayloadAction<ModalState>) => {
+    add: (state, action: PayloadAction<Cardapio>) => {
       const existingItem = state.items.find(
         (item) => item.id === action.payload.id
       )
@@ -32,9 +32,12 @@ const cartSlice = createSlice({
     },
     close: (state) => {
       state.enable = false
+    },
+    clear: (state) => {
+      state.items = []
     }
   }
 })
 
-export const { add, remove, open, close } = cartSlice.actions
+export const { add, remove, open, close, clear } = cartSlice.actions
 export default cartSlice.reducer

@@ -21,27 +21,25 @@ type Props = {
 const Product = ({ title, description, image, portion, price, id }: Props) => {
   const dispatch = useDispatch()
 
-  const [modal, setModal] = useState<ModalState>({
+  const [modal, setModal] = useState<Cardapio>({
     enable: false,
-    image: '',
-    price: 0,
+    foto: '',
+    preco: 0,
     id: 0,
-    title: '',
-    description: '',
-    portion: '',
-    quantity: 0
+    nome: '',
+    descricao: '',
+    porcao: ''
   })
 
   const addCart = () => {
     setModal({
       enable: false,
-      image: '',
-      price: 0,
+      foto: '',
+      preco: 0,
       id: 0,
-      title: '',
-      description: '',
-      portion: '',
-      quantity: 0
+      nome: '',
+      descricao: '',
+      porcao: ''
     })
 
     dispatch(add(modal))
@@ -51,13 +49,12 @@ const Product = ({ title, description, image, portion, price, id }: Props) => {
   const closeModal = () => {
     setModal({
       enable: false,
-      image: '',
-      price: 0,
+      foto: '',
+      preco: 0,
       id: 0,
-      title: '',
-      description: '',
-      portion: '',
-      quantity: 0
+      nome: '',
+      descricao: '',
+      porcao: ''
     })
   }
 
@@ -74,13 +71,12 @@ const Product = ({ title, description, image, portion, price, id }: Props) => {
           onClick={() =>
             setModal({
               enable: true,
-              image: image,
-              price: price,
+              foto: image,
+              preco: price,
               id: id,
-              title: title,
-              description: description,
-              portion: portion,
-              quantity: 1
+              nome: title,
+              descricao: description,
+              porcao: portion
             })
           }
         >
@@ -91,7 +87,7 @@ const Product = ({ title, description, image, portion, price, id }: Props) => {
       <S.Modal className={modal.enable ? 'enable' : ''}>
         <S.Overlay onClick={closeModal} />
         <S.ModalContent className="container">
-          <img src={modal.image} alt={title} />
+          <img src={modal.foto} alt={title} />
           <div>
             <div>
               <h3>{title}</h3>

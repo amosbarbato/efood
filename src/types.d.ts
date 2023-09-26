@@ -6,26 +6,15 @@ declare type Restaurants = {
   avaliacao: number
   descricao: string
   capa: string
-
-  cardapio: [
-    {
-      foto: string
-      preco: number
-      id: number
-      nome: string
-      descricao: string
-      porcao: string
-    }
-  ]
+  cardapio: Cardapio[]
 }
 
-declare type ModalState = {
+declare interface Cardapio {
   enable: boolean
-  image: string
-  price: number
+  foto: string
+  preco: number
   id: number
-  title: string
-  description: string
-  portion: string
-  quantity: number
+  nome: string
+  descricao: string
+  porcao: string
 }

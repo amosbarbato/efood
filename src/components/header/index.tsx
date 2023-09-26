@@ -1,6 +1,6 @@
 import { Logo } from '../../styles'
 import logo from '../../assets/logo.svg'
-import { open } from '../../services/store/reducers/cart'
+import { openSidebar } from '../../services/store/reducers/sidebar'
 
 import * as S from './styles'
 import { useDispatch, useSelector } from 'react-redux'
@@ -8,12 +8,8 @@ import { RootReducer } from '../../services/store'
 import { Link } from 'react-router-dom'
 
 const Header = () => {
-  const { items } = useSelector((state: RootReducer) => state.cart)
   const dispatch = useDispatch()
-
-  const openCart = () => {
-    dispatch(open())
-  }
+  const { items } = useSelector((state: RootReducer) => state.cart)
 
   return (
     <S.HeaderContent>
@@ -22,10 +18,9 @@ const Header = () => {
         <Link to="/">
           <Logo src={logo} alt="efood" />
         </Link>
-        <a href="" className="CardButton" onClick={openCart}>
-          {items.length}
-          <span> produto(s) no carrinho</span>
-        </a>
+        <span onClick={() => dispatch(openSidebar())}>
+          {items.length} produto(s) no carrinho
+        </span>
       </div>
     </S.HeaderContent>
   )
