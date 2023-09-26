@@ -96,7 +96,7 @@ const Product = ({ title, description, image, portion, price, id }: Props) => {
             <div>
               <h3>{title}</h3>
               <p>{description}</p>
-              <p>Serve: de {portion}</p>
+              <p>Serve: {portion}</p>
             </div>
 
             <Button

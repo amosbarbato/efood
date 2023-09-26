@@ -5,6 +5,7 @@ import starIcon from '../../assets/star.svg'
 
 import * as S from './styles'
 import { getDescription } from '../utiles'
+import { Link } from 'react-router-dom'
 
 type Props = {
   title: string
@@ -22,7 +23,8 @@ const Restaurant = ({
   description,
   detach,
   type,
-  evaluation
+  evaluation,
+  id
 }: Props) => (
   <S.Card>
     <img src={image} alt={title} />
@@ -38,14 +40,15 @@ const Restaurant = ({
       </div>
     </S.Infos>
     <p>{getDescription(description)}</p>
-
-    <Button
-      title="Clique aqui para mais informações"
-      type="button"
-      variant="red"
-    >
-      Saiba Mais
-    </Button>
+    <Link to={`/restaurant/${id}`}>
+      <Button
+        title="Clique aqui para mais informações"
+        type="button"
+        variant="red"
+      >
+        Saiba Mais
+      </Button>
+    </Link>
   </S.Card>
 )
 

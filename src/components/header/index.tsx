@@ -5,6 +5,7 @@ import { open } from '../../services/store/reducers/cart'
 import * as S from './styles'
 import { useDispatch, useSelector } from 'react-redux'
 import { RootReducer } from '../../services/store'
+import { Link } from 'react-router-dom'
 
 const Header = () => {
   const { items } = useSelector((state: RootReducer) => state.cart)
@@ -18,7 +19,9 @@ const Header = () => {
     <S.HeaderContent>
       <div className="container">
         <h3>Restaurantes</h3>
-        <Logo src={logo} alt="efood" />
+        <Link to="/">
+          <Logo src={logo} alt="efood" />
+        </Link>
         <a href="" className="CardButton" onClick={openCart}>
           {items.length}
           <span> produto(s) no carrinho</span>

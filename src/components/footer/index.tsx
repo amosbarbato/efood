@@ -6,10 +6,13 @@ import facebookIcon from '../../assets/facebook.svg'
 import twitterIcon from '../../assets/twitter.svg'
 
 import * as S from './styles'
+import { Link } from 'react-router-dom'
 
 const Footer = () => (
   <S.FooterContainer>
-    <Logo src={logo} alt="efood" />
+    <Link to="/">
+      <Logo src={logo} alt="efood" />
+    </Link>
     <ul>
       <li>
         <a href="">
