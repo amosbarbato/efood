@@ -1,16 +1,19 @@
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import Button from '../button'
 
 import * as S from './styles'
 import { RootReducer } from '../../services/store'
 
 import { getTotalPrice, parseToBrl } from '../utiles'
+import { changeComponent } from '../../services/store/reducers/sidebar'
 
 const Cart = () => {
+  const dispatch = useDispatch()
   const { items } = useSelector((state: RootReducer) => state.cart)
+  const goToForm = () => dispatch(changeComponent('form'))
 
   return (
-    <>
+    <S.CartModal>
       {items.length > 0 ? (
         <>
           <S.ItemList>
@@ -32,6 +35,7 @@ const Cart = () => {
             title="Clique aqui para continuar com a entrega"
             type="button"
             variant="cream"
+            onClick={goToForm}
           >
             Continuar com a entrega
           </Button>
@@ -41,7 +45,7 @@ const Cart = () => {
           O carrinho está vazio, adicione pelo menos um produto para continuar
         </S.Empyt>
       )}
-    </>
+    </S.CartModal>
   )
 }
 

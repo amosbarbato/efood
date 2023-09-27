@@ -1,5 +1,12 @@
 import styled from 'styled-components'
 import { color } from '../../styles'
+import { ButtonContainer } from '../button/styles'
+
+export const CartModal = styled.div`
+  ${ButtonContainer} {
+    width: 100%;
+  }
+`
 
 export const ItemList = styled.ul`
   width: 100%;
