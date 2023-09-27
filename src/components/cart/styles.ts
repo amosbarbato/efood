@@ -60,7 +60,7 @@ export const Remove = styled.button`
   background-color: transparent;
   position: absolute;
   right: 8px;
-  top: 8px;
+  bottom: 8px;
 `
 
 export const Quantity = styled.p`
