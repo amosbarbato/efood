@@ -10,7 +10,7 @@ import { changeComponent } from '../../services/store/reducers/sidebar'
 const Cart = () => {
   const dispatch = useDispatch()
   const { items } = useSelector((state: RootReducer) => state.cart)
-  const goToForm = () => dispatch(changeComponent('form'))
+  const goToForm = () => dispatch(changeComponent('checkout'))
 
   return (
     <S.CartModal>

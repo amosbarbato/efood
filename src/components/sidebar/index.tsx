@@ -4,7 +4,7 @@ import Cart from '../cart'
 
 import * as S from './styles'
 import { closeSidebar } from '../../services/store/reducers/sidebar'
-import Form from '../form'
+import Checkout from '../checkout'
 
 const Sidebar = () => {
   const dispatch = useDispatch()
@@ -14,8 +14,8 @@ const Sidebar = () => {
     switch (component) {
       case 'cart':
         return <Cart />
-      case 'form':
-        return <Form />
+      case 'checkout':
+        return <Checkout />
       default:
         return null
     }

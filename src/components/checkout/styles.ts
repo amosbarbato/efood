@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import { styled } from 'styled-components'
 import { color } from '../../styles'
 import { ButtonContainer } from '../button/styles'
 
@@ -27,10 +27,22 @@ export const FormContent = styled.div`
   }
 `
 
+export const CheckoutContent = styled.div`
+  margin-bottom: 16px;
+
+  p {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 22px;
+  }
+`
+
 export const InputGroup = styled.div<InputGroupProps>`
+  max-width: ${(props) => props.maxWidth || 'auto'};
   display: grid;
   grid-gap: 8px;
   margin-top: 8px;
+  flex: auto;
 
   label {
     font-size: 14px;
@@ -39,9 +51,17 @@ export const InputGroup = styled.div<InputGroupProps>`
   input {
     background-color: ${color.cream};
     color: #4b4b4b;
-    border: none;
+    border: 1px solid ${color.red};
     font-size: 14px;
     padding: 8px;
-    max-width: ${(props) => props.maxWidth || 'auto'};
+    width: 100%;
+
+    &:focus {
+      outline: none;
+    }
+
+    &.error {
+      border: 4px solid red;
+    }
   }
 `
