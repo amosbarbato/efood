@@ -1,16 +1,21 @@
 import { useDispatch, useSelector } from 'react-redux'
+
 import Button from '../button'
+import { getTotalPrice, parseToBrl } from '../utiles'
+import { RootReducer } from '../../services/store'
+import { changeComponent } from '../../services/store/reducers/sidebar'
+import { remove } from '../../services/store/reducers/cart'
 
 import * as S from './styles'
-import { RootReducer } from '../../services/store'
-
-import { getTotalPrice, parseToBrl } from '../utiles'
-import { changeComponent } from '../../services/store/reducers/sidebar'
 
 const Cart = () => {
   const dispatch = useDispatch()
   const { items } = useSelector((state: RootReducer) => state.cart)
   const goToForm = () => dispatch(changeComponent('checkout'))
+
+  const removeItem = (id: number) => {
+    dispatch(remove(id))
+  }
 
   return (
     <S.CartModal>
@@ -24,6 +29,7 @@ const Cart = () => {
                   <h4>{item.nome}</h4>
                   <span>{parseToBrl(item.preco)}</span>
                 </div>
+                <button type="button" onClick={() => removeItem(item.id)} />
               </li>
             ))}
           </S.ItemList>

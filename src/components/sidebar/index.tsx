@@ -1,10 +1,11 @@
 import { useDispatch, useSelector } from 'react-redux'
+
 import { RootReducer } from '../../services/store'
 import Cart from '../cart'
-
-import * as S from './styles'
 import { closeSidebar } from '../../services/store/reducers/sidebar'
 import Checkout from '../checkout'
+
+import * as S from './styles'
 
 const Sidebar = () => {
   const dispatch = useDispatch()

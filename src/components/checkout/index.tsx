@@ -1,16 +1,17 @@
+import { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import InputMask from 'react-input-mask'
-
 import * as Yup from 'yup'
 import { useFormik } from 'formik'
-import { RootReducer } from '../../services/store'
+
 import { usePurchaseMutation } from '../../services/api'
 
-import * as S from './styles'
-import { useState } from 'react'
 import Button from '../button'
+import { RootReducer } from '../../services/store'
 import { changeComponent } from '../../services/store/reducers/sidebar'
 import { getTotalPrice, parseToBrl } from '../utiles'
+
+import * as S from './styles'
 
 const Checkout = () => {
   const dispatch = useDispatch()

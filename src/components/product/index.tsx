@@ -1,13 +1,12 @@
-import * as S from './styles'
+import { useState } from 'react'
+import { useDispatch } from 'react-redux'
 
 import Button from '../button'
 import { getDescription, parseToBrl } from '../utiles'
-import { useDispatch } from 'react-redux'
 import { add, open } from '../../services/store/reducers/cart'
-
-import { useState } from 'react'
-
 import closeIcon from '../../assets/close.png'
+
+import * as S from './styles'
 
 type Props = {
   title: string

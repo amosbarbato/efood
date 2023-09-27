@@ -92,7 +92,6 @@ export const Close = styled.button`
   top: 8px;
   right: 8px;
   position: absolute;
-  cursor: pointer;
 
   img {
     width: 16px;

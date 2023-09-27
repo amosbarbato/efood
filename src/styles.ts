@@ -21,6 +21,10 @@ const Global = createGlobalStyle`
     color: ${color.red}
   }
 
+  button {
+    cursor: pointer;
+  }
+
   .container {
     max-width: 1024px;
     width: 100%;

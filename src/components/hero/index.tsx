@@ -1,7 +1,10 @@
 import { useParams } from 'react-router-dom'
-import * as S from './styles'
+
 import { RestaurantParams } from '../../pages/menu'
+
 import { useGetRestaurantQuery } from '../../services/api'
+
+import * as S from './styles'
 
 const Hero = () => {
   const { id } = useParams() as RestaurantParams

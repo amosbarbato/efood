@@ -2,6 +2,8 @@ import styled from 'styled-components'
 import { color } from '../../styles'
 import { ButtonContainer } from '../button/styles'
 
+import trash from '../../assets/trash.png'
+
 export const CartModal = styled.div`
   ${ButtonContainer} {
     width: 100%;
@@ -37,6 +39,17 @@ export const ItemList = styled.ul`
         font-size: 14px;
       }
     }
+
+    button {
+      background-image: url(${trash});
+      width: 16px;
+      height: 16px;
+      border: none;
+      background-color: transparent;
+      position: absolute;
+      top: 8px;
+      right: 8px;
+    }
   }
 `
 
@@ -46,7 +59,6 @@ export const Remove = styled.button`
   border: none;
   background-color: transparent;
   position: absolute;
-  cursor: pointer;
   right: 8px;
   top: 8px;
 `

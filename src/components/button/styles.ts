@@ -7,10 +7,14 @@ export const ButtonContainer = styled.button<Props>`
     props.variant === 'red' ? color.red : color.cream};
   color: ${(props) => (props.variant === 'red' ? color.cream : color.red)};
   border: none;
+  padding: 4px 6px;
 
   font-size: 14px;
   font-weight: 700;
 
-  padding: 4px 6px;
-  cursor: pointer;
+  transition: 0.3s ease;
+
+  &:hover {
+    opacity: 0.9;
+  }
 `

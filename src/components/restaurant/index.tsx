@@ -1,11 +1,11 @@
+import { Link } from 'react-router-dom'
+
 import Button from '../button'
 import Tag from '../tag'
-
 import starIcon from '../../assets/star.svg'
+import { getDescription } from '../utiles'
 
 import * as S from './styles'
-import { getDescription } from '../utiles'
-import { Link } from 'react-router-dom'
 
 type Props = {
   title: string

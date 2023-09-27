@@ -1,12 +1,13 @@
 import { useSelector } from 'react-redux'
+import { useParams } from 'react-router-dom'
+
 import Header from '../components/header'
 import Hero from '../components/hero'
 import ProductList from '../containers/productList'
-
-import { useGetRestaurantQuery } from '../services/api'
-import { useParams } from 'react-router-dom'
 import { RootReducer } from '../services/store'
 import Sidebar from '../components/sidebar'
+
+import { useGetRestaurantQuery } from '../services/api'
 
 export type RestaurantParams = {
   id: string

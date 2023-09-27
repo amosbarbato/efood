@@ -1,4 +1,5 @@
 import Restaurant from '../../components/restaurant'
+
 import { useGetRestaurantListQuery } from '../../services/api'
 
 import * as S from './styles'
