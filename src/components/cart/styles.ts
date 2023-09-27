@@ -47,20 +47,10 @@ export const ItemList = styled.ul`
       border: none;
       background-color: transparent;
       position: absolute;
-      top: 8px;
+      bottom: 8px;
       right: 8px;
     }
   }
-`
-
-export const Remove = styled.button`
-  width: 16px;
-  height: 16px;
-  border: none;
-  background-color: transparent;
-  position: absolute;
-  right: 8px;
-  bottom: 8px;
 `
 
 export const Quantity = styled.p`
